@@ -87,11 +87,10 @@ impl Component for Model {
                 {for self.texts.iter().enumerate().rev().map(|(idx, item)| {
                     html!{
                         <div 
-                          style={(if item.is_striked == true {"text-decoration: line-through; color: red;"} else {""}).to_string()}
-                        //   style={return if item.is_striked == true  {"color: red".to_string()} else { "".to_string()} } 
+                          style={if item.is_striked == true {"text-decoration: line-through; color: red;"} else {""}}
                           onclick={self.link.callback(move |_| Msg::Strikeout(idx))}
                         >
-                            {format!("{}{}{}", idx.to_string(), ". ".to_string(),  item.text)}
+                            {format!("{}{}{}", idx, ". ",  item.text)}
                         </div>
                     }
                 })}
