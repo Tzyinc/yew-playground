@@ -12,4 +12,4 @@ trunk serve
 
 how it looks: 
 
-!['gif demo']('Images/demo.gif')
+!['gif demo']('./Images/demo.gif')
